@@ -1,0 +1,294 @@
+{% extends "base.html" %}
+
+{% block title %}
+MediFlow AI
+{% endblock %}
+
+{% block content %}
+
+<nav class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-heart-pulse"></i>
+        MediFlow AI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#features">Features</a>
+
+        <a href="{{ url_for('analytics') }}">
+            Analytics
+        </a>
+
+        <a href="#about">About</a>
+
+        <a
+            href="{{ url_for('register') }}"
+            class="nav-btn">
+
+            Get Started
+
+        </a>
+
+    </div>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="badge">
+            ✨ Powered by Gemini AI
+        </div>
+
+        <h1>
+            AI-Powered Hospital
+            Intelligence Platform
+        </h1>
+
+        <p>
+            Reduce waiting times,
+            prioritize critical patients,
+            and optimize hospital resources
+            using real-time AI reasoning.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="{{ url_for('login') }}"
+                class="primary-btn">
+
+                Try AI Triage
+
+            </a>
+
+            <a
+                href="#features"
+                class="secondary-btn">
+
+                Learn More
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="dashboard-preview">
+
+            <div class="dashboard-header">
+
+                Live Hospital Dashboard
+
+            </div>
+
+            <div class="metric-card">
+
+                <span>
+                    Patients Today
+                </span>
+
+                <strong>
+                    127
+                </strong>
+
+            </div>
+
+            <div class="metric-card">
+
+                <span>
+                    Critical Cases
+                </span>
+
+                <strong>
+                    8
+                </strong>
+
+            </div>
+
+            <div class="metric-card">
+
+                <span>
+                    Average Wait
+                </span>
+
+                <strong>
+                    7 mins
+                </strong>
+
+            </div>
+
+            <div class="metric-card">
+
+                <span>
+                    Doctors Active
+                </span>
+
+                <strong>
+                    34
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section
+    class="features"
+    id="features">
+
+    <h2>
+        Why Hospitals Need MediFlow AI
+    </h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <div class="icon">
+                🧠
+            </div>
+
+            <h3>
+                AI Triage
+            </h3>
+
+            <p>
+                Gemini analyzes symptoms and
+                assigns urgency levels instantly.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="icon">
+                ⚡
+            </div>
+
+            <h3>
+                Queue Optimization
+            </h3>
+
+            <p>
+                Reduce patient wait time
+                through intelligent routing.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="icon">
+                📊
+            </div>
+
+            <h3>
+                Smart Analytics
+            </h3>
+
+            <p>
+                Real-time hospital insights
+                for administrators.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stat-box">
+
+        <h2>
+            43%
+        </h2>
+
+        <p>
+            Reduced Wait Time
+        </p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h2>
+            98%
+        </h2>
+
+        <p>
+            Triage Accuracy
+        </p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h2>
+            24/7
+        </h2>
+
+        <p>
+            AI Assistance
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section
+    id="about"
+    class="features">
+
+    <h2>
+        About MediFlow AI
+    </h2>
+
+    <p
+        style="
+        max-width:900px;
+        margin:auto;
+        text-align:center;
+        color:#94A3B8;
+        line-height:1.8;">
+
+        MediFlow AI leverages Google Gemini AI
+        to intelligently prioritize patients,
+        optimize hospital queues,
+        reduce waiting times,
+        and provide real-time analytics
+        for healthcare administrators.
+
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 MediFlow AI
+    </p>
+
+</footer>
+
+{% endblock %}

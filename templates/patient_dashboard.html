@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <h1>
+                Welcome, {{ name }}
+            </h1>
+
+            <p>
+                Manage your appointments, queue status and AI triage.
+            </p>
+
+        </div>
+
+        <a
+            href="/logout"
+            class="logout-btn">
+
+            Logout
+
+        </a>
+
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <h3>
+                Queue Position
+            </h3>
+
+            <h1>
+                #{{ queue_position }}
+            </h1>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>
+                Estimated Wait
+            </h3>
+
+            <h1>
+                {% if triage %}
+                    {{ triage["wait_time"] }}
+                {% else %}
+                    10 min
+                {% endif %}
+            </h1>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>
+                Appointments
+            </h3>
+
+            <h1>
+                {{ appointment_count }}
+            </h1>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>
+                Priority
+            </h3>
+
+            <h1>
+                {% if triage %}
+                    {{ triage["priority"] }}
+                {% else %}
+                    Medium
+                {% endif %}
+            </h1>
+
+        </div>
+
+    </div>
+
+    <div class="action-grid">
+
+        <!-- AI ANALYSIS -->
+
+        <a
+            href="/symptom-chat"
+            class="action-link">
+
+            <div class="action-card">
+
+                <div class="icon">
+                    🧠
+                </div>
+
+                <h2>
+                    AI Symptom Analysis
+                </h2>
+
+                <p>
+                    Analyze symptoms using Gemini AI.
+                </p>
+
+            </div>
+
+        </a>
+
+        <!-- BOOK APPOINTMENT -->
+
+        <a
+            href="/appointments"
+            class="action-link">
+
+            <div class="action-card">
+
+                <div class="icon">
+                    📅
+                </div>
+
+                <h2>
+                    Book Appointment
+                </h2>
+
+                <p>
+                    Schedule a consultation.
+                </p>
+
+            </div>
+
+        </a>
+
+        <!-- MY APPOINTMENTS -->
+
+        <a
+            href="/my-appointments"
+            class="action-link">
+
+            <div class="action-card">
+
+                <div class="icon">
+                    📋
+                </div>
+
+                <h2>
+                    My Appointments
+                </h2>
+
+                <p>
+                    View booked appointments.
+                </p>
+
+            </div>
+
+        </a>
+
+        <!-- QUEUE STATUS -->
+
+        <a
+            href="/queue-status"
+            class="action-link">
+
+            <div class="action-card">
+
+                <div class="icon">
+                    ⏳
+                </div>
+
+                <h2>
+                    Queue Status
+                </h2>
+
+                <p>
+                    Track your waiting time.
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+    <div class="recent-section">
+
+        <h2>
+            Recent AI Recommendation
+        </h2>
+
+        <div class="recommendation-card">
+
+            {% if triage %}
+
+                <h3>
+                    🏥 {{ triage["department"] }}
+                </h3>
+
+                <br>
+
+                <p>
+                    <strong>Symptoms:</strong>
+                    {{ triage["symptoms"] }}
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Priority:</strong>
+                    {{ triage["priority"] }}
+                </p>
+
+                <br>
+
+                <p>
+                    This recommendation was generated from your latest AI triage analysis.
+                </p>
+
+            {% else %}
+
+                <h3>
+                    No Analysis Available
+                </h3>
+
+                <p>
+                    Complete an AI symptom analysis to receive personalized recommendations.
+                </p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

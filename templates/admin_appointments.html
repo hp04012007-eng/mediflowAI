@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="admin-container">
+
+    <div class="admin-header">
+
+        <div>
+
+            <h1>
+                Appointment Management
+            </h1>
+
+            <p>
+                Monitor all hospital appointments
+            </p>
+
+        </div>
+
+        <a
+            href="/admin-dashboard"
+            class="admin-btn">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+    <div class="panel">
+
+        <table class="patients-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Doctor</th>
+                    <th>Department</th>
+                    <th>Time</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% if appointments %}
+
+                    {% for appt in appointments %}
+
+                    <tr>
+
+                        <td>
+                            {{ appt["id"] }}
+                        </td>
+
+                        <td>
+                            {{ appt["doctor_name"] }}
+                        </td>
+
+                        <td>
+                            {{ appt["department"] }}
+                        </td>
+
+                        <td>
+                            {{ appt["appointment_time"] }}
+                        </td>
+
+                        <td>
+
+                            {% if appt["status"] == "Scheduled" %}
+
+                                <span style="color:#22C55E;">
+                                    Scheduled
+                                </span>
+
+                            {% elif appt["status"] == "Cancelled" %}
+
+                                <span style="color:#EF4444;">
+                                    Cancelled
+                                </span>
+
+                            {% else %}
+
+                                {{ appt["status"] }}
+
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <tr>
+
+                        <td colspan="5">
+
+                            No appointments found.
+
+                        </td>
+
+                    </tr>
+
+                {% endif %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

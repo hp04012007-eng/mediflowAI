@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}
+AI Triage Result
+{% endblock %}
+
+{% block content %}
+
+<div class="triage-container">
+
+    <div class="triage-header">
+
+        <h1>
+            AI Triage Analysis
+        </h1>
+
+        <p>
+            Powered by Gemini AI
+        </p>
+
+    </div>
+
+    <div class="result-grid">
+
+        <div class="result-card urgency-card">
+
+            <h3>
+                Urgency Level
+            </h3>
+
+            <h1>
+                {{ urgency }}
+            </h1>
+
+        </div>
+
+        <div class="result-card">
+
+            <h3>
+                Department
+            </h3>
+
+            <h1>
+                {{ department }}
+            </h1>
+
+        </div>
+
+        <div class="result-card">
+
+            <h3>
+                Priority Score
+            </h3>
+
+            <h1>
+                {{ priority_score }}/100
+            </h1>
+
+        </div>
+
+        <div class="result-card">
+
+            <h3>
+                Estimated Wait
+            </h3>
+
+            <h1>
+                {{ wait_time }}
+            </h1>
+
+        </div>
+
+    </div>
+
+    <div class="analysis-card">
+
+        <h2>
+            Gemini Analysis
+        </h2>
+
+        <p>
+            {{ explanation }}
+        </p>
+
+    </div>
+
+    <div class="symptom-card">
+
+        <h2>
+            Reported Symptoms
+        </h2>
+
+        <p>
+            {{ symptoms }}
+        </p>
+
+    </div>
+
+    <div class="action-buttons">
+
+        <a
+            href="/symptom-chat"
+            class="btn-primary">
+
+            Analyze Again
+
+        </a>
+
+        <a
+            href="/patient-dashboard"
+            class="btn-secondary">
+
+            Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

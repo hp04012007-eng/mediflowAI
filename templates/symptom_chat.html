@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block title %}
+AI Symptom Analysis | MediFlow AI
+{% endblock %}
+
+{% block content %}
+
+<div class="chat-page">
+
+    <!-- Sidebar -->
+
+    <aside class="chat-sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <span>MediFlow AI</span>
+
+        </div>
+
+        <div class="sidebar-menu">
+
+            <a href="/patient-dashboard">
+                🏠 Dashboard
+            </a>
+
+            <a href="/symptom-chat" class="active-link">
+                🧠 AI Analysis
+            </a>
+
+            <a href="/appointments">
+                📅 Appointments
+            </a>
+
+            <a href="/queue-status">
+                ⏳ Queue Status
+            </a>
+
+            <a href="/analytics">
+                📊 Analytics
+            </a>
+
+            <a href="/logout">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="chat-main">
+
+        <div class="chat-header">
+
+            <div>
+
+                <h1>
+                    AI Symptom Analysis
+                </h1>
+
+                <p>
+                    Advanced Medical Triage Powered by Gemini AI
+                </p>
+
+            </div>
+
+            <div class="ai-badge">
+                ✨ Gemini 2.5 Flash
+            </div>
+
+        </div>
+
+        <div class="chat-layout">
+
+            <!-- Left Panel -->
+
+            <div class="chat-card">
+
+                <div class="assistant-message">
+
+                    <h3>
+                        👋 Welcome to MediFlow AI
+                    </h3>
+
+                    <p>
+
+                        Describe your symptoms in detail.
+                        Our AI engine will analyze urgency,
+                        recommend the correct department,
+                        estimate wait time,
+                        and prioritize your case.
+
+                    </p>
+
+                    <div class="examples">
+
+                        <strong>
+                            Example:
+                        </strong>
+
+                        <ul>
+
+                            <li>
+                                Chest pain and shortness of breath
+                            </li>
+
+                            <li>
+                                High fever for 3 days
+                            </li>
+
+                            <li>
+                                Severe headache and dizziness
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <form method="POST">
+
+                    <label>
+
+                        Describe Your Symptoms
+
+                    </label>
+
+                    <textarea
+                        name="symptoms"
+                        placeholder="Enter detailed symptoms here..."
+                        required>
+                    </textarea>
+
+                    <button type="submit">
+
+                        <i class="fa-solid fa-stethoscope"></i>
+
+                        Analyze Symptoms
+
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- Right Panel -->
+
+            <div class="feature-panel">
+
+                <div class="feature-card">
+
+                    <h3>
+                        🚨 Emergency Detection
+                    </h3>
+
+                    <p>
+                        Detects critical symptoms instantly.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>
+                        🏥 Smart Routing
+                    </h3>
+
+                    <p>
+                        Recommends the best hospital department.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>
+                        ⚡ Queue Optimization
+                    </h3>
+
+                    <p>
+                        Reduces patient waiting times.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>
+                        🤖 Explainable AI
+                    </h3>
+
+                    <p>
+                        Provides reasoning behind every decision.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+{% endblock %}

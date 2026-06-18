@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="appointments-container">
+
+    <div class="appointments-header">
+
+        <div>
+
+            <h1>
+                My Appointments
+            </h1>
+
+            <p>
+                Your scheduled consultations
+            </p>
+
+        </div>
+
+        <a
+            href="/patient-dashboard"
+            class="dashboard-btn">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+    {% if appointments %}
+
+    <div class="doctor-grid">
+
+        {% for appt in appointments %}
+
+        <div class="doctor-card">
+
+            <h2>
+                {{ appt["doctor_name"] }}
+            </h2>
+
+            <p>
+                {{ appt["department"] }}
+            </p>
+
+            <div class="availability">
+                {{ appt["appointment_time"] }}
+            </div>
+
+            <p style="margin-top:15px;">
+
+                Status:
+                <strong>
+                    {{ appt["status"] }}
+                </strong>
+
+            </p>
+
+            {% if appt["status"] == "Scheduled" %}
+
+            <a
+                href="/cancel-appointment/{{ appt['id'] }}"
+                class="cancel-btn">
+
+                Cancel Appointment
+
+            </a>
+
+            {% else %}
+
+            <div
+                class="cancelled-badge">
+
+                Appointment Cancelled
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="doctor-card">
+
+        <h2>
+            No Appointments Yet
+        </h2>
+
+        <p>
+            Book your first appointment from the Appointment Booking page.
+        </p>
+
+        <br>
+
+        <a
+            href="/appointments"
+            class="book-btn">
+
+            Book Appointment
+
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

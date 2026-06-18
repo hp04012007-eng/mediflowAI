@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+
+.env
+
+venv/
+env/
+
+database/hospital.db
+
+.idea/
+.vscode/
+
+.DS_Store

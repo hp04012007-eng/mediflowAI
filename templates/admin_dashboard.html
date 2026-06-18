@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="admin-container">
+
+    <div class="admin-header">
+
+        <div>
+
+            <h1>
+                Hospital Command Center
+            </h1>
+
+            <p>
+                Real-time hospital operations dashboard
+            </p>
+
+        </div>
+
+        <a
+            href="/logout"
+            class="logout-btn">
+
+            Logout
+
+        </a>
+
+    </div>
+
+    <div class="metrics-grid">
+
+        <div class="metric-card">
+
+            <h3>
+                Patients Today
+            </h3>
+
+            <h1>
+                {{ total_patients }}
+            </h1>
+
+        </div>
+
+        <div class="metric-card critical">
+
+            <h3>
+                Critical Cases
+            </h3>
+
+            <h1>
+                {{ critical_cases }}
+            </h1>
+
+        </div>
+
+        <div class="metric-card">
+
+            <h3>
+                Doctors Active
+            </h3>
+
+            <h1>
+                {{ total_doctors }}
+            </h1>
+
+        </div>
+
+        <div class="metric-card">
+
+            <h3>
+                AI Analyses
+            </h3>
+
+            <h1>
+                {{ total_triage }}
+            </h1>
+
+        </div>
+
+    </div>
+
+    <div class="admin-actions">
+
+        <a
+            href="/admin-patients"
+            class="admin-btn">
+
+            👥 Patients
+
+        </a>
+
+        <a
+            href="/admin-appointments"
+            class="admin-btn">
+
+            📅 Appointments
+
+        </a>
+
+        <a
+            href="/analytics"
+            class="admin-btn">
+
+            📊 Analytics
+
+        </a>
+
+    </div>
+
+    <div class="dashboard-grid">
+
+        <div class="panel">
+
+            <h2>
+                Department Load
+            </h2>
+
+            <canvas id="departmentChart"></canvas>
+
+        </div>
+
+        <div class="panel">
+
+            <h2>
+                Queue Status
+            </h2>
+
+            <div class="queue-card">
+
+                <span>
+                    Critical Queue
+                </span>
+
+                <strong>
+                    {{ critical_queue }} Patient{% if critical_queue != 1 %}s{% endif %}
+                </strong>
+
+            </div>
+
+            <div class="queue-card">
+
+                <span>
+                    High Priority
+                </span>
+
+                <strong>
+                    {{ high_queue }} Patient{% if high_queue != 1 %}s{% endif %}
+                </strong>
+
+            </div>
+
+            <div class="queue-card">
+
+                <span>
+                    Normal Queue
+                </span>
+
+                <strong>
+                    {{ normal_queue }} Patient{% if normal_queue != 1 %}s{% endif %}
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="gemini-card">
+
+        <h2>
+            Gemini Resource Recommendation
+        </h2>
+
+        <p>
+
+            Emergency Department is currently
+            operating at 92% capacity.
+
+            Recommendation:
+
+            Assign one physician from
+            General Medicine to Emergency.
+
+            Expected wait-time reduction:
+            17%
+
+        </p>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for(
+'static',
+filename='js/charts.js'
+) }}"></script>
+
+{% endblock %}

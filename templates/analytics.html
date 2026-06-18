@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="analytics-container">
+
+    <div class="analytics-header">
+
+        <div>
+
+            <h1>
+                Hospital Analytics
+            </h1>
+
+            <p>
+                Real-time hospital performance insights
+            </p>
+
+        </div>
+
+        <a
+            href="/admin-dashboard"
+            class="dashboard-btn">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+    <div class="analytics-metrics">
+
+        <div class="analytics-card">
+
+            <h3>
+                Total Patients
+            </h3>
+
+            <h1>
+                {{ total_patients }}
+            </h1>
+
+        </div>
+
+        <div class="analytics-card">
+
+            <h3>
+                AI Analyses
+            </h3>
+
+            <h1>
+                {{ total_triage }}
+            </h1>
+
+        </div>
+
+        <div class="analytics-card">
+
+            <h3>
+                Emergency Cases
+            </h3>
+
+            <h1>
+                {{ critical_cases }}
+            </h1>
+
+        </div>
+
+        <div class="analytics-card">
+
+            <h3>
+                Avg Wait Time
+            </h3>
+
+            <h1>
+                12 Min
+            </h1>
+
+        </div>
+
+    </div>
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+
+            <h2>
+                Department Distribution
+            </h2>
+
+            <canvas
+                id="departmentChart">
+            </canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h2>
+                Daily Patient Traffic
+            </h2>
+
+            <canvas
+                id="patientChart">
+            </canvas>
+
+        </div>
+
+    </div>
+
+    <div class="chart-card">
+
+        <h2>
+            Emergency Trends
+        </h2>
+
+        <canvas
+            id="emergencyChart">
+        </canvas>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for(
+    'static',
+    filename='js/charts.js'
+) }}"></script>
+
+{% endblock %}

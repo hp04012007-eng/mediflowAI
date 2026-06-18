@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="queue-container">
+
+    <div class="queue-header">
+
+        <h1>
+            Live Queue Status
+        </h1>
+
+        <p>
+            Track your consultation progress in real time
+        </p>
+
+    </div>
+
+    <div class="queue-grid">
+
+        <div class="queue-card">
+
+            <h3>
+                Queue Position
+            </h3>
+
+            <h1>
+                #{{ queue_position }}
+            </h1>
+
+        </div>
+
+        <div class="queue-card">
+
+            <h3>
+                Priority Level
+            </h3>
+
+            <h1 class="priority-critical">
+                {{ priority }}
+            </h1>
+
+        </div>
+
+        <div class="queue-card">
+
+            <h3>
+                Estimated Wait
+            </h3>
+
+            <h1>
+                {{ wait_time }}
+            </h1>
+
+        </div>
+
+        <div class="queue-card">
+
+            <h3>
+                Department
+            </h3>
+
+            <h1>
+                {{ department }}
+            </h1>
+
+        </div>
+
+    </div>
+
+    <div class="queue-message">
+
+        <h2>
+            Queue Progress
+        </h2>
+
+        <p>
+            You are progressing through the queue.
+        </p>
+
+    </div>
+
+    <div class="queue-message">
+
+        <h2>
+            Gemini Recommendation
+        </h2>
+
+        <p>
+            {{ recommendation }}
+        </p>
+
+    </div>
+
+    <div class="queue-actions">
+
+        <a
+            href="/my-appointments"
+            class="queue-btn">
+
+            View Appointments
+
+        </a>
+
+        <a
+            href="/patient-dashboard"
+            class="queue-btn-secondary">
+
+            Back To Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

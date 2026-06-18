@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="appointments-container">
+
+    <div class="appointments-header">
+
+        <div>
+
+            <h1>
+                Appointment Booking
+            </h1>
+
+            <p>
+                Schedule consultations with available doctors
+            </p>
+
+        </div>
+
+        <a
+            href="/patient-dashboard"
+            class="dashboard-btn">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+    <div class="doctor-grid">
+
+        <!-- Doctor 1 -->
+
+        <div class="doctor-card">
+
+            <div class="doctor-avatar">
+                👨‍⚕️
+            </div>
+
+            <h2>
+                Dr. Raj Sharma
+            </h2>
+
+            <p>
+                Cardiology
+            </p>
+
+            <div class="availability">
+                Available Today
+            </div>
+
+            <div class="slots">
+
+                <form action="/book-appointment" method="POST">
+                    <input type="hidden" name="doctor" value="Dr. Raj Sharma">
+                    <input type="hidden" name="department" value="Cardiology">
+                    <input type="hidden" name="time" value="10:00 AM">
+                    <button type="submit">10:00 AM</button>
+                </form>
+
+                <form action="/book-appointment" method="POST">
+                    <input type="hidden" name="doctor" value="Dr. Raj Sharma">
+                    <input type="hidden" name="department" value="Cardiology">
+                    <input type="hidden" name="time" value="11:00 AM">
+                    <button type="submit">11:00 AM</button>
+                </form>
+
+                <form action="/book-appointment" method="POST">
+                    <input type="hidden" name="doctor" value="Dr. Raj Sharma">
+                    <input type="hidden" name="department" value="Cardiology">
+                    <input type="hidden" name="time" value="12:00 PM">
+                    <button type="submit">12:00 PM</button>
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- Doctor 2 -->
+
+        <div class="doctor-card">
+
+            <div class="doctor-avatar">
+                👩‍⚕️
+            </div>
+
+            <h2>
+                Dr. Priya Singh
+            </h2>
+
+            <p>
+                Neurology
+            </p>
+
+            <div class="availability">
+                Available Today
+            </div>
+
+            <div class="slots">
+
+                <form action="/book-appointment" method="POST">
+                    <input type="hidden" name="doctor" value="Dr. Priya Singh">
+                    <input type="hidden" name="department" value="Neurology">
+                    <input type="hidden" name="time" value="2:00 PM">
+                    <button type="submit">2:00 PM</button>
+                </form>
+
+                <form action="/book-appointment" method="POST">
+                    <input type="hidden" name="doctor" value="Dr. Priya Singh">
+                    <input type="hidden" name="department" value="Neurology">
+                    <input type="hidden" name="time" value="3:00 PM">
+                    <button type="submit">3:00 PM</button>
+                </form>
+
+                <form action="/book-appointment" method="POST">
+                    <input type="hidden" name="doctor" value="Dr. Priya Singh">
+                    <input type="hidden" name="department" value="Neurology">
+                    <input type="hidden" name="time" value="4:00 PM">
+                    <button type="submit">4:00 PM</button>
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- Doctor 3 -->
+
+        <div class="doctor-card">
+
+            <div class="doctor-avatar">
+                👨‍⚕️
+            </div>
+
+            <h2>
+                Dr. Amit Verma
+            </h2>
+
+            <p>
+                General Medicine
+            </p>
+
+            <div class="availability">
+                Available Today
+            </div>
+
+            <div class="slots">
+
+                <form action="/book-appointment" method="POST">
+                    <input type="hidden" name="doctor" value="Dr. Amit Verma">
+                    <input type="hidden" name="department" value="General Medicine">
+                    <input type="hidden" name="time" value="9:00 AM">
+                    <button type="submit">9:00 AM</button>
+                </form>
+
+                <form action="/book-appointment" method="POST">
+                    <input type="hidden" name="doctor" value="Dr. Amit Verma">
+                    <input type="hidden" name="department" value="General Medicine">
+                    <input type="hidden" name="time" value="1:00 PM">
+                    <button type="submit">1:00 PM</button>
+                </form>
+
+                <form action="/book-appointment" method="POST">
+                    <input type="hidden" name="doctor" value="Dr. Amit Verma">
+                    <input type="hidden" name="department" value="General Medicine">
+                    <input type="hidden" name="time" value="5:00 PM">
+                    <button type="submit">5:00 PM</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

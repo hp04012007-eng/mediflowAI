@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="doctor-container">
+
+```
+<div class="doctor-header">
+
+    <div>
+
+        <h1>
+            Doctor Dashboard
+        </h1>
+
+        <p>
+            Manage patients, appointments and critical alerts
+        </p>
+
+    </div>
+
+    <a
+        href="/logout"
+        class="logout-btn">
+
+        Logout
+
+    </a>
+
+</div>
+
+<div class="doctor-stats">
+
+    <div class="doctor-stat-card">
+
+        <h3>
+            Assigned Patients
+        </h3>
+
+        <h1>
+            18
+        </h1>
+
+    </div>
+
+    <div class="doctor-stat-card critical-card">
+
+        <h3>
+            Critical Cases
+        </h3>
+
+        <h1>
+            4
+        </h1>
+
+    </div>
+
+    <div class="doctor-stat-card">
+
+        <h3>
+            Appointments Today
+        </h3>
+
+        <h1>
+            12
+        </h1>
+
+    </div>
+
+    <div class="doctor-stat-card">
+
+        <h3>
+            Availability
+        </h3>
+
+        <h1>
+            Active
+        </h1>
+
+    </div>
+
+</div>
+
+<div class="dashboard-sections">
+
+    <div class="patient-panel">
+
+        <h2>
+            Assigned Patients
+        </h2>
+
+        <div class="patient-item">
+
+            <span>
+                Rahul Sharma
+            </span>
+
+            <span class="critical-badge">
+
+                Critical
+
+            </span>
+
+        </div>
+
+        <div class="patient-item">
+
+            <span>
+                Priya Verma
+            </span>
+
+            <span class="medium-badge">
+
+                Medium
+
+            </span>
+
+        </div>
+
+        <div class="patient-item">
+
+            <span>
+                Amit Singh
+            </span>
+
+            <span class="low-badge">
+
+                Low
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="schedule-panel">
+
+        <h2>
+            Today's Schedule
+        </h2>
+
+        <div class="schedule-item">
+
+            10:00 AM -
+            Rahul Sharma
+
+        </div>
+
+        <div class="schedule-item">
+
+            11:00 AM -
+            Priya Verma
+
+        </div>
+
+        <div class="schedule-item">
+
+            12:00 PM -
+            Amit Singh
+
+        </div>
+
+        <div class="schedule-item">
+
+            2:00 PM -
+            Consultation Block
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="ai-panel">
+
+    <h2>
+        Gemini Clinical Insights
+    </h2>
+
+    <div class="ai-card">
+
+        Patient Rahul Sharma has symptoms
+        indicating possible cardiovascular risk.
+
+        Priority consultation recommended.
+
+    </div>
+
+</div>
+```
+
+</div>
+
+{% endblock %}

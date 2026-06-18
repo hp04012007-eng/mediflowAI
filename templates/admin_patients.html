@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="admin-container">
+
+    <div class="admin-header">
+
+        <div>
+
+            <h1>
+                Patient Management
+            </h1>
+
+            <p>
+                Monitor all patients currently in the system
+            </p>
+
+        </div>
+
+        <a
+            href="/admin-dashboard"
+            class="admin-btn">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+    <div class="panel">
+
+        <table class="patients-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Symptoms</th>
+                    <th>Priority</th>
+                    <th>Department</th>
+                    <th>Wait Time</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for patient in patients %}
+
+                <tr>
+
+                    <td>{{ patient["id"] }}</td>
+
+                    <td>{{ patient["symptoms"] }}</td>
+
+                    <td>{{ patient["priority"] }}</td>
+
+                    <td>{{ patient["department"] }}</td>
+
+                    <td>{{ patient["wait_time"] }}</td>
+
+                    <td>{{ patient["status"] }}</td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}
