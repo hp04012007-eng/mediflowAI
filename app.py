@@ -1094,29 +1094,63 @@ def admin_appointments():
 # START APPLICATION
 # =====================================
 
+#if __name__ == "__main__":
+
+#    try:
+
+#        os.makedirs(
+#            "database",
+#            exist_ok=True
+#        )
+
+#        init_db()
+
+#       print(
+ #           "✅ Database initialized successfully"
+ #       )
+
+ #   except Exception as e:
+
+#        print(
+#            f"❌ Database initialization failed: {e}"
+ #       )
+
+  #  app.run(
+ #      host="0.0.0.0",
+   #     port=int(os.environ.get("PORT", 5001))
+        
+  #  )
+
+# ------------------------------------
+# DATABASE INITIALIZATION
+# ------------------------------------
+
+try:
+
+    os.makedirs(
+        "database",
+        exist_ok=True
+    )
+
+    init_db()
+
+    print(
+        "✅ Database initialized successfully"
+    )
+
+except Exception as e:
+
+    print(
+        f"❌ Database initialization failed: {e}"
+    )
+
+# ------------------------------------
+# RUN APP
+# ------------------------------------
+
 if __name__ == "__main__":
-
-    try:
-
-        os.makedirs(
-            "database",
-            exist_ok=True
-        )
-
-        init_db()
-
-        print(
-            "✅ Database initialized successfully"
-        )
-
-    except Exception as e:
-
-        print(
-            f"❌ Database initialization failed: {e}"
-        )
 
     app.run(
         host="0.0.0.0",
         port=int(os.environ.get("PORT", 5001))
-        
     )
